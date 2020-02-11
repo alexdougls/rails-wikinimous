@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-between navbar border-bottom my-4">
+  <%= link_to 'Wikinimous', articles_path, :class => 'homelink' %>
+  <%= link_to 'New Article', new_article_path, :class => 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <div class="title-container">
+    <h1><%= @article.title %></h1>
+    <%= link_to '🖊', edit_article_path(@article) %>
+    <%= link_to '🗑',
+                article_path(@article),
+                method: "delete",
+                data: { confirm:"Are you sure?" } %>
+  </div>
+  <p><%= @article.content %></p>
+</div>

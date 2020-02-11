@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between navbar border-bottom my-4">
+  <header>Wikinimous</header>
+  <%= link_to 'New Article', new_article_path, :class => 'btn btn-primary' %>
+</div>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <div class="article">
+      <%= link_to article.title, article_path(article), :class => 'title-link' %>
+      <p><%= article.content %></p>
+    </div>
+  <% end %>
+</div>
